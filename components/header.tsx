@@ -1,6 +1,6 @@
 export default function Header() {
   return (
-    <header className="flex w-full justify-between items-center px-8 py-4 top-0 fixed bg-white border-b-2">
+    <header className="flex w-full justify-between items-center px-8 py-4 top-0 fixed bg-white border-b-2 z-10">
       <span className="text-2xl">MetaStore</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"

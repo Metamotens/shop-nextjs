@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function getProduct(id: string): Promise<Product> {
-  //await new Promise((resolve) => setTimeout(resolve, 3000));
+  await new Promise((resolve) => setTimeout(resolve, Math.random() * 1000));
   const res = await fetch(`${process.env.API_URL}/products/${id}`);
   const data = await res.json();
   return data as Product;
@@ -17,7 +17,7 @@ export default async function ProductDetailPage({
   const product = await getProduct(params.id);
 
   return (
-    <section className="flex items-center justify-center h-screen">
+    <section className="flex items-center justify-center mt-32">
       <article className="flex flex-row bg-white w-2/3 p-4">
         <Image
           className="bg-white rounded-t-lg mx-auto my-4 w-[200px] h-[350px]"

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 async function getProducts(): Promise<Product[]> {
-  // await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise((resolve) => setTimeout(resolve, Math.random() * 1000));
 
   const res = await fetch(`${process.env.API_URL}/products`);
   const data = await res.json();

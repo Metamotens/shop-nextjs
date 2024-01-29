@@ -1,4 +1,4 @@
-import { Product } from "meta/libs/models/product";
+import { Product } from "meta/lib/models/product";
 import Image from "next/image";
 import Link from "next/link";
 

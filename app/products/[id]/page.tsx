@@ -1,6 +1,7 @@
-import { Product } from "meta/lib/models/product";
 import Image from "next/image";
 import Link from "next/link";
+import { Product } from "meta/lib/models/product";
+import { AddButton } from "meta/lib/components/ui/add-button";
 
 async function getProduct(id: string): Promise<Product> {
   await new Promise((resolve) => setTimeout(resolve, Math.random() * 1000));
@@ -31,12 +32,7 @@ export default async function ProductDetailPage({
           <h1 className="text-2xl font-bold">{product.title}</h1>
           <p className="text-gray-500">{product.description}</p>
           <p className="text-lg font-bold">{product.price}€</p>
-          <button
-            type="button"
-            className="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition-colors"
-          >
-            Add to cart
-          </button>{" "}
+          <AddButton product={product} quantity={1} />
           <Link
             href={`..`}
             className="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-700 transition-colors text-center"
